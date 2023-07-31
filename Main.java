@@ -14,7 +14,7 @@ class Main {
     
     static JFrame frame = new JFrame("CLOCK");
     static JLabel milTime = new JLabel();
-    static JLabel title = new JLabel("Jonah's Shitty Clock");
+    static JLabel title = new JLabel("Pigeon's Crummy Clock");
     static JPanel timePanel = new JPanel();
     static JPanel btnPanel = new JPanel();
     static JPanel titlePanel = new JPanel();
@@ -76,14 +76,14 @@ class Main {
 
     static void clock() {
             if (isMilitary == true) {
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss yyyy-MM-dd ");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss yyyy-MM-dd");
                 LocalDateTime now = LocalDateTime.now();
                     
                 militaryTime = dtf.format(now);
                 milTime.setText(militaryTime);
                 switchBtn.setText("Switch to 12h Time");
             } else {
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss dd/MM/yyyy ");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss dd/MM/yyyy");
                 LocalDateTime now = LocalDateTime.now();
                     
                 militaryTime = dtf.format(now);
