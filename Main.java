@@ -1,3 +1,9 @@
+/* Pigeon's Simple Digital Clock V1.1: 
+ * Changed title to be less inconspiquious
+ * Fixed title being uncentered
+ * Added a README.MD
+*/
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -27,6 +33,7 @@ class Main {
         // Frame Config
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1280, 720);
+        frame.setResizable(false);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.getContentPane().setBackground(Color.DARK_GRAY); 
@@ -62,7 +69,7 @@ class Main {
         timePanel.add(milTime);
         
         //Titlepanel config
-        titlePanel.setBounds(385, 30, 510, 95);
+        titlePanel.setBounds(315, 30, 610, 95);
         titlePanel.setBackground(Color.DARK_GRAY);
         titlePanel.add(title);
         
@@ -83,7 +90,7 @@ class Main {
                 milTime.setText(militaryTime);
                 switchBtn.setText("Switch to 12h Time");
             } else {
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss dd/MM/yyyy");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss MM/dd/yyyy");
                 LocalDateTime now = LocalDateTime.now();
                     
                 militaryTime = dtf.format(now);
